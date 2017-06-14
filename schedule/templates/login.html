@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+	
+	<head>
+		<title>Login</title>
+	</head>
+
+	<body>
+		
+	<h1>Login</h1>
+
+	<form method="POST">
+	{{ form.as_p }}
+	{% csrf_token %}
+	<input type="submit" value="SUBMIT"/>
+	</form>
+	{% if user.is_authenticated %}
+	<h5>You are logged in</h5>
+	<a href="/home/">HOME</a>
+	{% else %}
+	<h5>incorrect credentials..</h5>
+	{% endif %}
+	
+
+
+	</body>
+
+</html>
