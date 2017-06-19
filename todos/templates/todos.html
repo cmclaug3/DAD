@@ -1,0 +1,21 @@
+{% extends "base_template.html" %}
+
+{% block title %}Item{% endblock title %}
+
+{% block content %}
+
+<h1>ToDo List</h1>
+
+{% for todo in all_of_them %}
+
+<h3>{{todo.title}}</h3>
+<br><br>
+<p>{{todo.text}}</p>
+<br><br>
+<h6>{{todo.priority}}</h6>
+<h6>{{todo.completed}}</h6>
+<hr>
+
+{% endfor %}
+
+{% endblock content %} 

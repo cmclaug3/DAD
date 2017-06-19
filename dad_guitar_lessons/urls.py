@@ -16,13 +16,17 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-from schedule.views import home, lesson_main, lesson_submit, login_view
-
+from schedule.views import home, lesson_main, lesson_submit, login_view, logout_view
+from todos.views import todos
 
 urlpatterns = [
+
     url(r'^admin/', admin.site.urls),
-    url(r'^schedule/', lesson_main),
-    url(r'^home/', home),
-    url(r'^$', login_view),
+    url(r'^lessons/', lesson_main, name='lesson_main'),
+    url(r'^$', login_view, name='login_view'),
+    url(r'^logout/', logout_view, name='logout_view'),
+    url(r'^todos/', todos, name='todos'),
+    url(r'^home/', home, name='home'),
+    
 
 ]

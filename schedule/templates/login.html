@@ -2,12 +2,14 @@
 
 <html>
 	
+
 	<head>
 		<title>Login</title>
+
 	</head>
 
 	<body>
-		
+	
 	<h1>Login</h1>
 
 	<form method="POST">
@@ -15,15 +17,20 @@
 	{% csrf_token %}
 	<input type="submit" value="SUBMIT"/>
 	</form>
+
 	{% if user.is_authenticated %}
 	<h5>You are logged in</h5>
 	<a href="/home/">HOME</a>
-	{% else %}
-	<h5>incorrect credentials..</h5>
-	{% endif %}
-	
+	{% endif%}
 
+	<h5>{{ msg }}</h5>
+	
+	
 
 	</body>
 
-</html>
+	</html>
+	
+
+	<!--  -->
+

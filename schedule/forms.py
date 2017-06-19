@@ -1,15 +1,15 @@
 from django import forms
-from schedule.models import Schedule
+from schedule.models import Lesson
 
 from django.contrib.auth.forms import AuthenticationForm
 
 
-class ScheduleForm(forms.ModelForm):
+class LessonForm(forms.ModelForm):
 	class Meta:
-		model = Schedule
+		model = Lesson
 		fields = [
 			'first_name','last_name','years_playing',
-			'email','introduction',
+			'email','tell_us_about_yourself',
 		]
 
 
