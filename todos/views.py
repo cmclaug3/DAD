@@ -9,6 +9,6 @@ from todos.models import Item
 
 def todos(request):
 	context = {
-		'all_of_them': Item.objects.all
+		'all_of_them': Item.objects.all()
 	}
 	return render(request, 'todos.html', context)
