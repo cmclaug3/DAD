@@ -13,7 +13,17 @@
 <p>{{todo.text}}</p>
 <br><br>
 <h6>{{todo.priority}}</h6>
-<h6>{{todo.completed}}</h6>
+<h6>
+	{% if todo.completed %}
+	<input type="button", value="Completed" disabled />
+	{% else %}
+	<form method='POST'>
+		<input type="hidden", name="id", value="{{todo.id}}"/>
+		<input type="submit", value="Complete"/>
+		{% csrf_token %}
+	</form>
+	{% endif %}
+</h6>
 <hr>
 
 {% endfor %}

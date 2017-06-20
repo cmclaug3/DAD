@@ -17,7 +17,7 @@ from django.conf.urls import url
 from django.contrib import admin
 
 from schedule.views import home, lesson_main, lesson_submit, login_view, logout_view
-from todos.views import todos
+from todos.views import todos, new_todo
 
 urlpatterns = [
 
@@ -26,6 +26,7 @@ urlpatterns = [
     url(r'^$', login_view, name='login_view'),
     url(r'^logout/', logout_view, name='logout_view'),
     url(r'^todos/', todos, name='todos'),
+    url(r'^new_todo/', new_todo, name='new_todo'),
     url(r'^home/', home, name='home'),
     
 
